@@ -15,22 +15,7 @@ public class SpringSessionWithRedisApplication {
 		SpringApplication.run(SpringSessionWithRedisApplication.class, args);
 	}
 
-	/*@Bean
-	JedisConnectionFactory jedisConnectionFactory() {
-	    JedisConnectionFactory jedisConFactory
-	      = new JedisConnectionFactory();
-	    jedisConFactory.setHostName("localhost");
-	    jedisConFactory.setPort(6379);
-	    return jedisConFactory;
-	}
 	
-	@Bean
-	public RedisTemplate<String, Object> redisTemplate() {
-	    RedisTemplate<String, Object> template = new RedisTemplate<>();
-	    template.setConnectionFactory(jedisConnectionFactory());
-	    return template;
-	}
-	*/
 	@Bean
 	public Jedis jedis() {
 		return new Jedis("localhost", 6379);
